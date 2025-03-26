@@ -1,35 +1,74 @@
+/* Background Image */
 body {
-    background-color: #fff0f5; /* Light pink romantic background */
-    color: #d63384; /* Romantic pink text color */
-    font-family: 'Dancing Script', cursive; /* Beautiful cursive font */
+    background: url('kassie.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #d63384;
+    font-family: 'Dancing Script', cursive;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
+/* Hide content initially */
+.content {
+    display: none; /* Hidden until button click */
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease-in-out;
+}
+
+/* Message Box */
 #messageContainer {
-    display: none;
+    opacity: 0; /* Hidden initially */
     text-align: center;
-    position: relative;
+    transition: opacity 0.5s ease-in-out;
 }
 
+/* Flower Image */
 .flower {
-    width: 150px; /* Adjust as needed */
+    width: 150px;
     height: 150px;
     object-fit: cover;
-    clip-path: path("M75,15 C35,-20 -40,40 75,140 190,40 115,-20 75,15 Z");
     transition: all 0.3s ease-in-out;
 }
 
 .flower:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Soft glow effect */
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
 
+/* Message Text */
 .message {
     font-size: 36px;
     font-weight: bold;
     opacity: 0;
     transform: translateY(20px);
     transition: all 1s ease-in-out;
+}
+
+/* Button */
+.btn-primary {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff69b4 !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #ff85c1;
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
 
 /* Heart Animation */
@@ -50,20 +89,4 @@ body {
         transform: translateY(-100px);
         opacity: 0;
     }
-}
-
-
-.btn-primary {
-    background-color: #ff69b4 !important; /* Romantic pink button */
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-primary:hover {
-    background-color: #ff85c1; /* Lighter pink on hover */
-    transform: scale(1.1); /* Slight zoom effect */
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5); /* Soft glowing effect */
 }

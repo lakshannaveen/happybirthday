@@ -1,9 +1,9 @@
 $(document).ready(function () {
     $("#showMessageBtn").click(function () {
-        $("#messageContainer").fadeIn(500, function () {
-            $(".flower").css({ opacity: 1, transform: "scale(1)" });
+        $(".content").fadeIn(500, function () {
+            $("#messageContainer").css("opacity", "1"); // Show message smoothly
             $(".message").css({ opacity: 1, transform: "translateY(0)" });
-            
+
             // Generate floating hearts
             for (let i = 0; i < 10; i++) {
                 createHeart();
@@ -19,8 +19,10 @@ function createHeart() {
 
     heart.css({
         left: xPos + "px",
-        bottom: 0,
-        animationDelay: delay + "s"
+        bottom: "0px",
+        position: "fixed",
+        animation: "floatUp 3s ease-in-out",
+        opacity: 1
     });
 
     $("body").append(heart);
